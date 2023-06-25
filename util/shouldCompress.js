@@ -7,7 +7,7 @@ function shouldCompress(originType, originSize, webp) {
 	if (webp && originSize < MIN_COMPRESS_LENGTH) return false;
 	if (	// if png or gif image, and size is less than compression limit (also shouldn't be webp)
 		!webp &&
-		(originType.endsWith("png") || originType.endsWith("gif")) &&
+		(originType.endsWith("png") || originType.endsWith("gif") || originType.endsWith("html") ) &&
 		originSize < MIN_TRANSPARENT_COMPRESS_LENGTH
 	) {
 		return false;
